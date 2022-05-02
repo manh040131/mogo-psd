@@ -1,0 +1,156 @@
+.team {
+  padding: 9.5rem 0 11rem;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+  &-item-image {
+    width: 100%;
+    height: 47rem;
+    object-fit: cover;
+  }
+  &-item-container {
+    position: relative;
+    transition: all 0.25s linear;
+    margin-bottom: 2.5rem;
+    &:hover {
+      transform: translate(-1rem, -1rem);
+    }
+    &:hover::before {
+      transform: translate(1rem, 1rem);
+    }
+    &:hover .team-content {
+      opacity: 1;
+      visibility: visible;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $third-color;
+      z-index: -2;
+      transition: all 0.25s linear;
+    }
+  }
+  .team-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba($primary-color, 0.8),
+      rgba($secondary-color, 0.8)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s linear;
+  }
+  &-social {
+    display: flex;
+  }
+  &-social-item {
+    width: 5.5rem;
+    height: 5.5rem;
+    background: $secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    &:not(:last-child) {
+      border-right: thin solid #f38181;
+    }
+    &:hover {
+      background-color: #f38181;
+    }
+    &:hover .team-social-link {
+      color: white;
+    }
+  }
+  &-social-link {
+    color: #f38181;
+    font-size: 3rem;
+    transition: all 0.3s linear;
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-name {
+    text-transform: uppercase;
+    padding-bottom: 1.5rem;
+  }
+  &-position {
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: $text-color;
+  }
+  @include maxWidth(1023px) {
+    &-social-item {
+      width: 7.5rem;
+      height: 7.5rem;
+    }
+    &-social-link {
+      font-size: 5.5rem;
+    }
+    &-list {
+      grid-auto-columns: 70%;
+      grid-auto-flow: column;
+      grid-template-columns: unset;
+      grid-row-gap: 2.5rem;
+      overflow-x: auto;
+      @include hideScroll();
+      padding: 1rem;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+    }
+    &-item {
+      scroll-snap-align: center;
+    }
+  }
+  @include maxWidth(767px) {
+    &-social-item {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+    &-social-link {
+      font-size: 3.5rem;
+    }
+    &-list {
+      grid-auto-columns: 80%;
+      grid-auto-flow: column;
+      grid-template-columns: unset;
+      grid-row-gap: 2rem;
+      overflow-x: auto;
+      @include hideScroll();
+      padding: 1rem;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+    }
+    &-item {
+      scroll-snap-align: center;
+    }
+    &-item-image {
+      height: 40rem;
+    }
+  }
+}
+.brand {
+  background-color: #f8f8f8;
+  padding: 6rem 0;
+  @include maxWidth(767px) {
+    padding: 3rem 0;
+  }
+}

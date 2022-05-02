@@ -1,0 +1,144 @@
+.footer {
+  &-top {
+    padding: 7.5rem 0 7rem;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  &-column {
+    width: calc(25% - 2.5rem);
+    &:first-child {
+      width: calc(40% - 2.5rem);
+    }
+    &:nth-child(2) {
+      width: calc(35% - 2.5rem);
+    }
+  }
+  &-heading {
+    text-transform: uppercase;
+    font-weight: 500;
+    height: 4rem;
+  }
+  &-heading--logo {
+    text-transform: none;
+    font-weight: 700;
+    font-size: 4.6rem;
+    color: $gray-dark-color;
+  }
+  &-desc {
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    color: $text-color;
+    margin-bottom: 4.5rem;
+    margin-top: 2rem;
+  }
+  &-follower {
+    strong {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: $title-color;
+    }
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: thin solid $gray-color;
+  }
+  &-social {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.5rem;
+    span {
+      font-family: $secondary-font;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: $text-color;
+    }
+    &-icon {
+      color: $third-color;
+      margin-left: 1.5rem;
+      font-size: 1.8rem;
+    }
+  }
+  &-form {
+    width: 100%;
+    max-width: 38rem;
+    display: flex;
+    align-items: stretch;
+  }
+  &-form-input {
+    padding: 1.5rem;
+    background-color: white;
+    border: thin solid $gray-color;
+    border-right: 0;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+  &-form-button {
+    color: white;
+    text-transform: uppercase;
+    padding: 1.5rem 3.5rem;
+    border: 0;
+    background-color: $third-color;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+  &-blog {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  &-blog-image {
+    width: 12rem;
+    height: 8rem;
+    margin-right: 2rem;
+    flex-shrink: 0;
+  }
+  &-blog-title {
+    font-size: 1.2rem;
+    color: $title-color;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+  }
+  &-blog-date {
+    font-family: $secondary-font;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: $text-color;
+  }
+  &-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2px;
+  }
+  &-image {
+    width: 100%;
+    height: 0;
+    position: relative;
+    padding-bottom: calc(100%);
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-bottom{
+      padding: 2rem 0;
+      text-align: center;
+      border-top: thin solid $gray-color;
+      span{
+          color: #f38181;
+      }
+  }
+  @include maxWidth(1023px){
+      &-top{
+          display: block;
+      }
+      &-column{
+        width: 100% !important;
+        margin-bottom: 3rem;
+      }
+  }
+}

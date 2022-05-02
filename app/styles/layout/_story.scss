@@ -1,0 +1,115 @@
+.story {
+  padding: 10.5rem 0;
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  &-item {
+    width: calc(33.33% - 2rem);
+  }
+  &-media {
+    position: relative;
+  }
+  &-date {
+    width: 6rem;
+    height: 7rem;
+    background-color: $third-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -1rem;
+    bottom: 1rem;
+    &-number {
+      font-weight: 700;
+      font-size: 3rem;
+      color: white;
+    }
+    &-text {
+      font-family: $secondary-font;
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: white;
+    }
+  }
+  &-title {
+    text-transform: uppercase;
+    color: $title-color;
+    padding: 1.5rem 0;
+  }
+  &-desc {
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    color: $text-color;
+    padding-bottom: 2rem;
+    border-bottom: thin solid $gray-color;
+    margin-bottom: 2rem;
+  }
+  &-meta {
+    display: flex;
+    align-items: center;
+    &-item {
+      margin-right: 2rem;
+    }
+    &-icon {
+      color: $third-color;
+      padding-right: 5px;
+    }
+    &-number {
+      font-family: $secondary-font;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: $text-color;
+    }
+  }
+  @include maxWidth(1024px) {
+    &-desc {
+      display: -webkit-box;
+      -webkit-line-clamp: 3; // số dòng muốn hiển thị
+      -webkit-box-orient: vertical;
+      text-overflow: ellipse;
+      overflow: hidden;
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      flex-direction: column;
+    }
+    &-item {
+      width: 100%;
+      margin-bottom: 4.5rem;
+    }
+  }
+}
+.map {
+  padding: 5.5rem;
+  background: linear-gradient(to bottom, rgba(white, 0.8), rgba(white, 0.8)),
+    url("../images/img-map.png") no-repeat center / cover;
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-link{
+      padding: 20px 0;
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #f38181;
+      position: relative;
+      &::before{
+          content: "";
+          position: absolute;
+          width: 60px;
+          height: 3px;
+          background-color: #f38181;
+          bottom: 0;
+          transform: translateX(-50%);
+          left: 50%;
+      }
+  }
+}
